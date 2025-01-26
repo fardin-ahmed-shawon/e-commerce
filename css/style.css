@@ -48,6 +48,10 @@ ul, li {
     color: var(--theme);
 }
 
+.bold-hr {
+    border: 2px solid var(--black);
+}
+
 .bold-title {
     font-weight: 600;
 }
@@ -66,8 +70,15 @@ ul, li {
 .btn-danger {
     background: var(--theme);
 }
+
 .btn-danger:hover {
     background: var(--themehover);
+}
+
+/* Grid Container 2x */
+.grid-container-2x {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 /*  Container Design */
@@ -80,5 +91,89 @@ ul, li {
 @media only screen and (max-width: 400px) {
     .container {
         padding: 0 15px;
+    }
+}
+
+/* Footer Area */
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+}
+
+.footer-grid-container  > div {
+    /* border: 1px solid; */
+    padding: 10px;
+}
+
+.footer-grid-container .logo {
+    text-align: left;
+}
+
+.footer-grid-container h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.footer-grid-container p {
+    padding: 5px 0;
+}
+
+.footer-grid-container a:hover {
+    color: var(--theme);
+}
+
+.footer-grid-container .business p span,
+.footer-grid-container .business .copyright {
+    font-weight: 500;
+}
+
+.footer-grid-container .newsletter .copyright {
+    display: none;
+}
+
+.footer-grid-container .social-links i {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .footer-grid-container {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .business {
+        grid-area: business;
+    }
+    .about {
+        grid-area: about;
+    }
+    .help {
+        grid-area: help;
+    }
+    .newsletter {
+        grid-area: news;
+    }
+    .footer-grid-container {
+        grid-template-areas: 'business business business business'
+                             'about about help help'
+                             'news news news news';
+        row-gap: 24px;
+    }
+    .footer-grid-container input {
+        width: 60%;
+    }
+    .footer-grid-container .business .copyright {
+        display: none;
+    }
+    .footer-grid-container .newsletter .copyright {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer-grid-container input {
+        width: 100%;
     }
 }

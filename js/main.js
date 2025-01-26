@@ -22,3 +22,118 @@ closeSearchBtn.addEventListener('click', ()=>{
     closeSearchBtn.style.display = 'none';
     searchBtn.style.display = 'block';
 });
+
+/*****************************************/
+/* Add new arrival products dynamically */
+
+// Select the card container
+const new_arrival_products = document.querySelector('.new-arrival-products');
+const total_new_arrival_products = 15;
+
+// loop to generate 10 cards
+for (let i = 0; i < total_new_arrival_products; i++) {
+
+    // Create the card element
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Set the inner HTML of the card
+    card.innerHTML = `
+    <img src="img/product.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h6>Winter Casual Denim Jacket For Men</h6>
+        <p>Rating: 4.6/5.0</p>
+        <h6>1799 TK</h6>
+        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+    </div>`;
+    // Append the card to the container
+    new_arrival_products.appendChild(card);     
+}
+
+
+/*****************************************/
+/* Add Top selling products dynamically */
+
+// Select the card container
+const top_selling_products = document.querySelector('.top-selling-products');
+const total_top_selling_product = 8;
+
+// loop to generate 10 cards
+for (let i = 0; i < total_top_selling_product; i++) {
+
+    // Create the card element
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Set the inner HTML of the card
+    card.innerHTML = `
+    <img src="img/product.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h6>Winter Casual Denim Jacket For Men</h6>
+        <p>Rating: 4.6/5.0</p>
+        <h6>1799 TK</h6>
+        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+    </div>`;
+    // Append the card to the container
+    top_selling_products.appendChild(card);     
+}
+
+
+/*****************************************/
+/* Add men's products dynamically */
+
+// Select the card container
+const mens_fashion_products = document.querySelector('.mens-fashion-products');
+const total_mens_fashion_productst = 2;
+
+// loop to generate 10 cards
+for (let i = 0; i < total_mens_fashion_productst; i++) {
+
+    // Create the card element
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Set the inner HTML of the card
+    card.innerHTML = `
+    <img src="img/product.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h6>Winter Casual Denim Jacket For Men</h6>
+        <p>Rating: 4.6/5.0</p>
+        <h6>1799 TK</h6>
+        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+    </div>`;
+    // Append the card to the container
+    mens_fashion_products.appendChild(card);     
+}
+
+
+/*****************************************/
+/* Add women's products dynamically */
+
+// Select the card container
+const womens_fashion_products = document.querySelector('.womens-fashion-products');
+const total_womens_fashion_productst = 3;
+
+// loop to generate 10 cards
+for (let i = 0; i < total_womens_fashion_productst; i++) {
+
+    // Create the card element
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Set the inner HTML of the card
+    card.innerHTML = `
+    <img src="img/product.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h6>Winter Casual Denim Jacket For Men</h6>
+        <p>Rating: 4.6/5.0</p>
+        <h6>1799 TK</h6>
+        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+    </div>`;
+    // Append the card to the container
+    womens_fashion_products.appendChild(card);     
+}

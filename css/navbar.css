@@ -232,17 +232,6 @@ nav .inner {
 .dropdown:hover .content {
     display: block;
 }
-
-/* .dropdown .dropdown-add-remove{
-    display: block;
-} */
-
-/* @media only screen and (min-width: 1150px) {
-    .dropdown:hover .content {
-        display: block;
-    }
-} */
-
 /* End Dropdown Menu */
 
 

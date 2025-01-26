@@ -1,32 +1,25 @@
 /* Grid Layouting */
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    column-gap: 35px;
-    row-gap: 35px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.grid-container > div {
+    margin: 10px;
 }
 
 @media only screen and (max-width: 1700px) {
     .grid-container {
-        grid-template-columns: auto auto auto auto;
-        column-gap: 30px;
-        row-gap: 30px;
+        grid-template-columns: 25% 25% 25% 25%;
     }
 }
 
 @media only screen and (max-width: 1290px) {
     .grid-container {
-        grid-template-columns: auto auto auto;
-        column-gap: 25px;
-        row-gap: 25px;
+        grid-template-columns: 33.33% 33.33% 33.33%;
     }
 }
 @media only screen and (max-width: 900px) {
-    .grid-container {
-        grid-template-columns: auto auto auto;
-        column-gap: 20px;
-        row-gap: 20px;
-    }
     .card h6 {
         font-size: 17px;
     }
@@ -44,10 +37,6 @@
     .card-body .btn {
         font-size: 12px;
     }
-    .grid-container {
-        column-gap: 15px;
-        row-gap: 15px;
-    }
     .card-body .btn {
         padding: 10px;
     }
@@ -63,7 +52,7 @@
 
 @media only screen and (max-width: 600px) {
     .grid-container {
-        grid-template-columns: auto auto;
+        grid-template-columns: 50% 50%;
     }
     .card-body {
         padding: 10px;
