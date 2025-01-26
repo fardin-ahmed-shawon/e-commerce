@@ -5,7 +5,9 @@
     --black: #000;
     --gray: #787878;
     --topback: #F4F6F8;
+    --back2: #fffcf886;
     --theme: #ff0000;
+    --themehover: #cf0909;
 }
 
 * {
