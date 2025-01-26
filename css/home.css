@@ -1,11 +1,8 @@
-.bg-gray1 {
-    background: var(--topback);
-}
-.bg-gray2 {
-    background: var(--back2);
+.card {
+    border-radius: 20px;
 }
 
-/* Button */
+/* Card Button */
 .card-body .btn {
     width: 100%;
     padding: 15px;
@@ -20,17 +17,7 @@
     font-weight: 600;
 }
 
-.btn-danger {
-    background: var(--theme);
-}
-.btn-danger:hover {
-    background: var(--themehover);
-}
-
-.card {
-    border-radius: 20px;
-}
-
+/* Card Text */
 .card h6 {
     font-size: 20px;
     font-weight: 700;
@@ -39,21 +26,18 @@
     margin-bottom: 10px;
 }
 
+/* Card Image */
 .card-img-top {
     padding: 7px;
     border-radius: 20px 20px 0px 0;
 }
 
-h1 {
-    font-weight: 700;
-}
-
-/* Slider area */
+/* Carousel Slider area */
 .carousel-inner {
     max-height: 600px;
 }
 
-/* info area */
+/* Info area */
 .info-icons {
     font-size: 25px;
 }
@@ -68,80 +52,7 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Layouting */
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    column-gap: 35px;
-    row-gap: 35px;
-}
-
-@media only screen and (max-width: 1700px) {
-    .grid-container {
-        grid-template-columns: auto auto auto auto;
-        column-gap: 30px;
-        row-gap: 30px;
-    }
-}
-
-@media only screen and (max-width: 1290px) {
-    .grid-container {
-        grid-template-columns: auto auto auto;
-        column-gap: 25px;
-        row-gap: 25px;
-    }
-}
-@media only screen and (max-width: 900px) {
-    .grid-container {
-        grid-template-columns: auto auto auto;
-        column-gap: 20px;
-        row-gap: 20px;
-    }
-    .card h6 {
-        font-size: 17px;
-    }
-    .card-body .btn {
-        font-size: 14px;
-    }
-}
-@media only screen and (max-width: 800px) {
-    .card h6 {
-        font-size: 13px;
-    }
-    .card p {
-        font-size: 13px;
-    }
-    .card-body .btn {
-        font-size: 12px;
-    }
-    .grid-container {
-        column-gap: 15px;
-        row-gap: 15px;
-    }
-    .card-body .btn {
-        padding: 10px;
-    }
-}
-@media only screen and (max-width: 700px) {
-    .card-body .btn {
-        padding: 5px;
-    }
-    .card {
-        border-radius: 15px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: auto auto;
-    }
-    .card-body {
-        padding: 10px;
-    }
-}
-
-
-/* Category */
+/* Category Area */
 .category button {
     background: var(--theme);
     color: var(--white);

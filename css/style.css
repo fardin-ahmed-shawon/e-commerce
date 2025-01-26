@@ -25,6 +25,11 @@ body {
     transition: .3s;
 }
 
+/* Reusable Components */
+h1 {
+    font-weight: 700;
+}
+
 a {
     color: var(--black);
     text-decoration: none;
@@ -51,8 +56,21 @@ ul, li {
     color: var(--gray);
 }
 
+.bg-gray1 {
+    background: var(--topback);
+}
+.bg-gray2 {
+    background: var(--back2);
+}
 
-/*  Reusable Design */
+.btn-danger {
+    background: var(--theme);
+}
+.btn-danger:hover {
+    background: var(--themehover);
+}
+
+/*  Container Design */
 .container {
     max-width: 1670px;
     margin-left: auto;
