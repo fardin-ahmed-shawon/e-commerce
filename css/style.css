@@ -88,9 +88,14 @@ ul, li {
     margin-right: auto;
     padding: 0 35px;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 550px) {
     .container {
         padding: 0 15px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .container {
+        padding: 0 10px;
     }
 }
 

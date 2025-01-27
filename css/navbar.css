@@ -383,9 +383,6 @@ nav .inner {
     }
 }
 @media only screen and (max-width: 550px) {
-    .container {
-        padding: 0 20px;
-    }
     .bottom-nav-mobile p {
         font-size: 13px;
     }
@@ -396,10 +393,5 @@ nav .inner {
 @media only screen and (max-width: 450px) {
     .bottom-nav-mobile p {
         font-size: 10px;
-    }
-}
-@media only screen and (max-width: 330px) {
-    .container {
-        padding: 0 10px;
     }
 }

@@ -58,3 +58,9 @@
         padding: 10px;
     }
 }
+
+@media only screen and (max-width: 550px) {
+    .grid-container > div {
+        margin: 5px;
+    }
+}
