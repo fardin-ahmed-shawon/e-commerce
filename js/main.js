@@ -23,6 +23,7 @@ closeSearchBtn.addEventListener('click', ()=>{
     searchBtn.style.display = 'block';
 });
 
+
 /*****************************************/
 /* Add new arrival products dynamically */
 

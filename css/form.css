@@ -3,6 +3,11 @@
     margin: auto;
 }
 
+.registration .content form a:hover,
+.login .content form a:hover {
+  text-decoration: underline;
+}
+
 /* Registration Form */
 .container .title {
     font-size: 25px;
@@ -114,13 +119,6 @@
     form .category {
       width: 100%;
     }
-    .content form .user-details {
-      max-height: 300px;
-      overflow-y: scroll;
-    }
-    .user-details::-webkit-scrollbar {
-      width: 5px;
-    }
   }
   /* Responsive media query code for mobile devices */
   @media(max-width: 459px) {
@@ -128,8 +126,3 @@
       flex-direction: column;
     }
   }
-
-/* Login Form */
-/* .content form .full-input-box {
-    display: block;
-} */
