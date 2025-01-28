@@ -24,8 +24,8 @@ closeSearchBtn.addEventListener('click', ()=>{
 });
 
 
-/*****************************************/
-/* Add new arrival products dynamically */
+/***************************************************/
+/* Add new arrival products dynamically home page */
 
 // Select the card container
 const new_arrival_products = document.querySelector('.new-arrival-products');
@@ -53,8 +53,8 @@ for (let i = 0; i < total_new_arrival_products; i++) {
 }
 
 
-/*****************************************/
-/* Add Top selling products dynamically */
+/**************************************************/
+/* Add Top selling products dynamically home page*/
 
 // Select the card container
 const top_selling_products = document.querySelector('.top-selling-products');
@@ -82,14 +82,15 @@ for (let i = 0; i < total_top_selling_product; i++) {
 }
 
 
-/*****************************************/
-/* Add men's products dynamically */
+
+/*********************************************/
+/* Add men's products dynamically Home Page */
 
 // Select the card container
-const mens_fashion_products = document.querySelector('.mens-fashion-products');
+const mens_fashion_products = document.querySelector('.home-mens-fashion-products');
 const total_mens_fashion_productst = 2;
 
-// loop to generate 10 cards
+// loop to generate product cards
 for (let i = 0; i < total_mens_fashion_productst; i++) {
 
     // Create the card element
@@ -111,15 +112,15 @@ for (let i = 0; i < total_mens_fashion_productst; i++) {
 }
 
 
-/*****************************************/
-/* Add women's products dynamically */
+/***********************************************/
+/* Add women's products dynamically Home Page */
 
 // Select the card container
-const womens_fashion_products = document.querySelector('.womens-fashion-products');
-const total_womens_fashion_productst = 3;
+const home_womens_fashion_products = document.querySelector('.home-womens-fashion-products');
+const home_total_womens_fashion_productst = 3;
 
-// loop to generate 10 cards
-for (let i = 0; i < total_womens_fashion_productst; i++) {
+// loop to generate product cards
+for (let i = 0; i < home_total_womens_fashion_productst; i++) {
 
     // Create the card element
     const card = document.createElement("div");
@@ -136,5 +137,7 @@ for (let i = 0; i < total_womens_fashion_productst; i++) {
         <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
     </div>`;
     // Append the card to the container
-    womens_fashion_products.appendChild(card);     
+    home_womens_fashion_products.appendChild(card);     
 }
+
+

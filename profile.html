@@ -27,13 +27,13 @@
 <!--==================================-->
 <nav id="home">
     <!-- Top -->
-    <div class="bg-gray">
+    <!-- <div class="bg-gray">
         <div class="top">
             <div class="left-top">Welcome to <span>Name</span></div>
             <div class="right-top"><i class="ri-map-pin-line"></i>
                 Order Tracking</div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <!-- Middle -->
@@ -222,7 +222,7 @@
 <!--============================================-->
 <!--============ START PROFILE SECTION =========-->
 <!--============================================-->
-<section class="profile py-5">
+<section class="profile py-5 js-waypoint-sticky">
     <div class="container">
         <h1 class="text-center pb-5">Profile</h1>
         <div class="profile-container">
@@ -387,9 +387,48 @@
 <!--============ END FIXED BOTTOM NAV ============-->
 <!--==============================================-->
 
+<!-- Google Hosted Jquery --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<!--JQuery Plugins-->
+<script src="js/jquery.waypoints.min.js"></script>
+
+<!-- Main JS -->
 <script src="js/main.js"></script>
+
+<script>
+    function myFunction() {
+    // Sticky Navbar
+    $(document).ready(function () {
+            $(".js-waypoint-sticky").waypoint(function (t) {
+                "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+            });
+        });
+    }
+
+    function handleResize(event) {
+    if (event.matches) {
+        // The width matches the condition
+        myFunction();
+    } else {
+        console.log("Device width does not match the condition.");
+    }
+    }
+
+    // Define the device width condition
+    const mediaQuery = window.matchMedia("(max-width: 1150px)"); // Example: max-width of 768px
+
+    // Add an event listener to monitor changes in width
+    mediaQuery.addEventListener("change", handleResize);
+
+    // Run the function on initial load if the condition matches
+    if (mediaQuery.matches) {
+    myFunction();
+    }
+</script>
     
 </body>
 </html>

@@ -28,13 +28,13 @@
 <!--==================================-->
 <nav id="home">
     <!-- Top -->
-    <div class="bg-gray">
+    <!-- <div class="bg-gray">
         <div class="top">
             <div class="left-top">Welcome to <span>Name</span></div>
             <div class="right-top"><i class="ri-map-pin-line"></i>
                 Order Tracking</div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <!-- Middle -->
@@ -224,7 +224,7 @@
 <!--============ START HOME SECTION ==========-->
 <!--==========================================-->
 
-<div class="pb-5">
+<div class="pb-5 js-waypoint-sticky">
 
     <!-- Carousel Slider Area -->
     <div class="img-carousel-area">
@@ -380,7 +380,7 @@
     <div class="all-categories">
         
         <!-- Men's Fashion -->
-        <section class="mens-fashion py-5">
+        <section class="py-5">
             <div class="container">
                 <div class="grid-container-2x">
                     <div class="title-align-left">
@@ -392,7 +392,7 @@
                     </div>
                 </div>
                 <br><hr><br>
-                <div class="grid-container mens-fashion-products">
+                <div class="grid-container home-mens-fashion-products">
                     <!-- All Product Card Will Add Here Dynamically -->
                     <!-- <div class="card">
                         <img src="img/product.jpg" class="card-img-top" alt="...">
@@ -409,7 +409,7 @@
         </section>
 
         <!-- Women's Fashion -->
-        <section class="womens-fashion py-5 bg-gray">
+        <section class="py-5 bg-gray">
             <div class="container">
                 <div class="grid-container-2x">
                     <div class="title-align-left">
@@ -423,7 +423,7 @@
                     </div>
                 </div>
                 <br><hr><br>
-                <div class="grid-container womens-fashion-products">
+                <div class="grid-container home-womens-fashion-products">
                     <!-- All Product Card Will Add Here Dynamically -->
                     <!-- <div class="card">
                         <img src="img/product.jpg" class="card-img-top" alt="...">
@@ -554,9 +554,26 @@
 <!--============ END FIXED BOTTOM NAV ============-->
 <!--==============================================-->
 
+<!-- Google Hosted Jquery --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<!--JQuery Plugins-->
+<script src="js/jquery.waypoints.min.js"></script>
+
+<!-- Main JS -->
 <script src="js/main.js"></script>
+
+<script>
+// Sticky Navbar
+$(document).ready(function () {
+    $(".js-waypoint-sticky").waypoint(function (t) {
+        "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+    });
+});
+</script>
 
 </body>
 </html>
