@@ -141,3 +141,13 @@ for (let i = 0; i < home_total_womens_fashion_productst; i++) {
 }
 
 
+// Product Page
+function changeImage(imageSrc) {
+    document.getElementById('main-image').src = imageSrc;
+}
+function addToCart() {
+    alert('Product added to cart!');
+}
+function buyNow() {
+    alert('Proceeding to checkout...');
+}
