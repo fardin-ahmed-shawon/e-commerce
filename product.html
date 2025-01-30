@@ -228,37 +228,43 @@
     <div class="container">
         <div class="product-container">
             <div class="product-images">
-                <img id="main-image" src="img/image1.jpg" alt="Product Image">
-                <div class="image-thumbnails">
-                    <img src="img/image1.jpg" alt="Thumbnail 1" onclick="changeImage('img/image1.jpg')">
-                    <img src="img/image2.jpg" alt="Thumbnail 2" onclick="changeImage('img/image2.jpg')">
-                    <img src="img/image3.jpg" alt="Thumbnail 3" onclick="changeImage('img/image3.jpg')">
-                    <img src="img/image4.jpg" alt="Thumbnail 4" onclick="changeImage('img/image4.jpg')">
+                <div class="img-thumb">
+                    <img id="main-image" src="img/image1.jpg" alt="Product Image">
+                    <div class="img-small">
+                        <img src="img/image1.jpg" alt="Thumbnail 1" onclick="changeImage('img/image1.jpg')">
+                        <img src="img/image2.jpg" alt="Thumbnail 2" onclick="changeImage('img/image2.jpg')">
+                        <img src="img/image3.jpg" alt="Thumbnail 3" onclick="changeImage('img/image3.jpg')">
+                        <img src="img/image4.jpg" alt="Thumbnail 4" onclick="changeImage('img/image4.jpg')">
+                    </div>
                 </div>
             </div>
             <div class="product-details">
-                <h2>Product Name</h2>
-                <br>
-                <p class="description">This is a short description of the product highlighting its features and benefits.This is a short description of the product highlighting its features and benefits.</p>
-                <h3 class="price">$99.99</h3>
-                <br>
-                <div class="btn-and-counter">
-                    <div class="counter">
-                        <button onclick="minus()" class="minus">-</button>
-                        <span class="num">0</span>
-                        <button onclick="plus()" class="plus">+</button>
+                <div>
+                    <h2>Product Name</h2>
+                    <br>
+                    <p class="description">This is a short description of the product highlighting its features and benefits.This is a short description of the product highlighting its features and benefits.</p>
+                    <h3 class="price">$99.99</h3>
+                    <br>
+                    <div class="btn-and-counter">
+                        <div class="counter">
+                            <button onclick="minus()" class="minus">-</button>
+                            <span class="num">0</span>
+                            <button onclick="plus()" class="plus">+</button>
+                        </div>
+
+                        <button onclick="addToCart()" class="btn btn-danger add-cart">
+                            <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
+                        </button>
+                        
                     </div>
-                    <button onclick="addToCart()" class="btn btn-danger">
-                        <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
+                    <button onclick="buyNow()" class="btn btn-dark buy-now">
+                        <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
                     </button>
                 </div>
-                <button onclick="buyNow()" class="btn btn-dark buy-now">
-                    <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
-                </button>
             </div>
         </div>
     </div>
-    <br><hr><br>
+    <br><br><hr><br>
 </section>
 <!--========================================-->
 <!--============ END PRODUCT AREA ==========-->
