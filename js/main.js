@@ -46,7 +46,7 @@ for (let i = 0; i < total_new_arrival_products; i++) {
         <p>Rating: 4.6/5.0</p>
         <h6>1799 TK</h6>
         <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
     </div>`;
     // Append the card to the container
     new_arrival_products.appendChild(card);     
@@ -75,7 +75,7 @@ for (let i = 0; i < total_top_selling_product; i++) {
         <p>Rating: 4.6/5.0</p>
         <h6>1799 TK</h6>
         <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
     </div>`;
     // Append the card to the container
     top_selling_products.appendChild(card);     
@@ -105,7 +105,7 @@ for (let i = 0; i < total_mens_fashion_productst; i++) {
         <p>Rating: 4.6/5.0</p>
         <h6>1799 TK</h6>
         <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
     </div>`;
     // Append the card to the container
     mens_fashion_products.appendChild(card);     
@@ -134,7 +134,7 @@ for (let i = 0; i < home_total_womens_fashion_productst; i++) {
         <p>Rating: 4.6/5.0</p>
         <h6>1799 TK</h6>
         <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
     </div>`;
     // Append the card to the container
     home_womens_fashion_products.appendChild(card);     
