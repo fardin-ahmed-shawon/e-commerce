@@ -29,28 +29,54 @@ closeSearchBtn.addEventListener('click', ()=>{
 
 // Select the card container
 const new_arrival_products = document.querySelector('.new-arrival-products');
-const total_new_arrival_products = 15;
+var count_new = 0;
 
-// loop to generate 10 cards
-for (let i = 0; i < total_new_arrival_products; i++) {
-
-    // Create the card element
-    const card = document.createElement("div");
-    card.className = "card";
-
-    // Set the inner HTML of the card
-    card.innerHTML = `
-    <img src="img/product.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h6>Winter Casual Denim Jacket For Men</h6>
-        <p>Rating: 4.6/5.0</p>
-        <h6>1799 TK</h6>
-        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
-    </div>`;
-    // Append the card to the container
-    new_arrival_products.appendChild(card);     
-}
+// Mapping Product Data
+mens.map(item => {
+    if (count_new < 5) {
+        // Create the card element
+        const card = document.createElement("div");
+        card.className = "card";
+            
+        // Insert Product data into the card
+        card.innerHTML = `
+            <img src="${item.images}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6>${item.title}</h6>
+                <p>${item.sub_category}</p>
+                <h6>Tk. ${item.price}</h6>
+                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            </div>`;
+            
+        // Insert card into the product container
+        new_arrival_products.appendChild(card);
+        count_new++;
+    } 
+})
+var count_new = 0;
+womens.map(item => {
+    if (count_new < 5) {
+        // Create the card element
+        const card = document.createElement("div");
+        card.className = "card";
+            
+        // Insert Product data into the card
+        card.innerHTML = `
+            <img src="${item.images}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6>${item.title}</h6>
+                <p>${item.sub_category}</p>
+                <h6>Tk. ${item.price}</h6>
+                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            </div>`;
+            
+        // Insert card into the product container
+        new_arrival_products.appendChild(card);
+        count_new++;
+    } 
+})
 
 
 /**************************************************/
@@ -58,28 +84,54 @@ for (let i = 0; i < total_new_arrival_products; i++) {
 
 // Select the card container
 const top_selling_products = document.querySelector('.top-selling-products');
-const total_top_selling_product = 8;
+var count_top = 0;
 
-// loop to generate 10 cards
-for (let i = 0; i < total_top_selling_product; i++) {
-
-    // Create the card element
-    const card = document.createElement("div");
-    card.className = "card";
-
-    // Set the inner HTML of the card
-    card.innerHTML = `
-    <img src="img/product.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h6>Winter Casual Denim Jacket For Men</h6>
-        <p>Rating: 4.6/5.0</p>
-        <h6>1799 TK</h6>
-        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
-    </div>`;
-    // Append the card to the container
-    top_selling_products.appendChild(card);     
-}
+// Mapping Product Data
+mens.map(item => {
+    if (count_top < 6) {
+        // Create the card element
+        const card = document.createElement("div");
+        card.className = "card";
+            
+        // Insert Product data into the card
+        card.innerHTML = `
+            <img src="${item.images}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6>${item.title}</h6>
+                <p>${item.sub_category}</p>
+                <h6>Tk. ${item.price}</h6>
+                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            </div>`;
+            
+        // Insert card into the product container
+        top_selling_products.appendChild(card); 
+        count_top++;
+    }
+})
+var count_top = 0;
+womens.map(item => {
+    if (count_top < 6) {
+        // Create the card element
+        const card = document.createElement("div");
+        card.className = "card";
+            
+        // Insert Product data into the card
+        card.innerHTML = `
+            <img src="${item.images}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6>${item.title}</h6>
+                <p>${item.sub_category}</p>
+                <h6>Tk. ${item.price}</h6>
+                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            </div>`;
+            
+        // Insert card into the product container
+        top_selling_products.appendChild(card); 
+        count_top++;
+    }
+})
 
 
 
@@ -115,29 +167,28 @@ mens.map(item => {
 /* Add women's products dynamically Home Page */
 
 // Select the card container
-const home_womens_fashion_products = document.querySelector('.home-womens-fashion-products');
-const home_total_womens_fashion_productst = 3;
+const womens_fashion_products = document.querySelector('.home-womens-fashion-products');
 
-// loop to generate product cards
-for (let i = 0; i < home_total_womens_fashion_productst; i++) {
-
+// Mapping Product Data
+womens.map(item => {
     // Create the card element
     const card = document.createElement("div");
     card.className = "card";
-
-    // Set the inner HTML of the card
+        
+    // Insert Product data into the card
     card.innerHTML = `
-    <img src="img/product.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h6>Winter Casual Denim Jacket For Men</h6>
-        <p>Rating: 4.6/5.0</p>
-        <h6>1799 TK</h6>
-        <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-        <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
-    </div>`;
-    // Append the card to the container
-    home_womens_fashion_products.appendChild(card);     
-}
+        <img src="${item.images}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6>${item.title}</h6>
+            <p>${item.sub_category}</p>
+            <h6>Tk. ${item.price}</h6>
+            <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+            <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+        </div>`;
+        
+    // Insert card into the product container
+    womens_fashion_products.appendChild(card); 
+})
 
 
 // Product Page
