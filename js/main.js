@@ -48,6 +48,10 @@ mens.map(item => {
         // Create the card element
         const card = document.createElement("div");
         card.className = "card";
+        card.setAttribute("product-id", `${item.id}`);
+        card.setAttribute("product-title", `${item.title}`);
+        card.setAttribute("product-img", `${item.images}`);
+        card.setAttribute("product-price", `${item.price}`);
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -56,7 +60,7 @@ mens.map(item => {
                 <h6>${item.title}</h6>
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
-                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
                 <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
@@ -71,6 +75,10 @@ womens.map(item => {
         // Create the card element
         const card = document.createElement("div");
         card.className = "card";
+        card.setAttribute("product-id", `${item.id}`);
+        card.setAttribute("product-title", `${item.title}`);
+        card.setAttribute("product-img", `${item.images}`);
+        card.setAttribute("product-price", `${item.price}`);
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -79,7 +87,7 @@ womens.map(item => {
                 <h6>${item.title}</h6>
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
-                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
                 <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
@@ -103,6 +111,10 @@ mens.map(item => {
         // Create the card element
         const card = document.createElement("div");
         card.className = "card";
+        card.setAttribute("product-id", `${item.id}`);
+        card.setAttribute("product-title", `${item.title}`);
+        card.setAttribute("product-img", `${item.images}`);
+        card.setAttribute("product-price", `${item.price}`);
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -111,7 +123,7 @@ mens.map(item => {
                 <h6>${item.title}</h6>
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
-                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
                 <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
@@ -126,6 +138,10 @@ womens.map(item => {
         // Create the card element
         const card = document.createElement("div");
         card.className = "card";
+        card.setAttribute("product-id", `${item.id}`);
+        card.setAttribute("product-title", `${item.title}`);
+        card.setAttribute("product-img", `${item.images}`);
+        card.setAttribute("product-price", `${item.price}`);
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -134,7 +150,7 @@ womens.map(item => {
                 <h6>${item.title}</h6>
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
-                <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+                <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
                 <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
@@ -157,6 +173,10 @@ mens.map(item => {
     // Create the card element
     const card = document.createElement("div");
     card.className = "card";
+    card.setAttribute("product-id", `${item.id}`);
+    card.setAttribute("product-title", `${item.title}`);
+    card.setAttribute("product-img", `${item.images}`);
+    card.setAttribute("product-price", `${item.price}`);
         
     // Insert Product data into the card
     card.innerHTML = `
@@ -165,7 +185,7 @@ mens.map(item => {
             <h6>${item.title}</h6>
             <p>${item.sub_category}</p>
             <h6>Tk. ${item.price}</h6>
-            <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+            <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
             <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
         </div>`;
         
@@ -185,6 +205,10 @@ womens.map(item => {
     // Create the card element
     const card = document.createElement("div");
     card.className = "card";
+    card.setAttribute("product-id", `${item.id}`);
+    card.setAttribute("product-title", `${item.title}`);
+    card.setAttribute("product-img", `${item.images}`);
+    card.setAttribute("product-price", `${item.price}`);
         
     // Insert Product data into the card
     card.innerHTML = `
@@ -193,7 +217,7 @@ womens.map(item => {
             <h6>${item.title}</h6>
             <p>${item.sub_category}</p>
             <h6>Tk. ${item.price}</h6>
-            <button class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
+            <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
             <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
         </div>`;
         
@@ -206,9 +230,6 @@ womens.map(item => {
 function changeImage(imageSrc) {
     document.getElementById('main-image').src = imageSrc;
 }
-function addToCart() {
-    alert('Product added to cart!');
-}
-function buyNow() {
-    alert('Proceeding to checkout...');
-}
+
+
+

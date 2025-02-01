@@ -80,7 +80,7 @@
                     
                     <div class="cart-container">
                         <div onclick="openCartBar()" class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
-                        <div class="cart-counter">0</div>
+                        <div class="cart-counter top-cart-counter">0</div>
                     </div>
                     
                     <div class="txt-area">
@@ -230,7 +230,9 @@
     </div><br>
     <h2 class="cart-title">Your Cart</h2><hr>
 
+    
     <div class="cart-content">
+        <!-- Recreatable component -->
         <div class="cart-box">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
@@ -244,8 +246,6 @@
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
-    </div>
-    <div class="cart-content">
         <div class="cart-box">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
@@ -259,6 +259,7 @@
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
+        <!-- End -->
     </div>
 
     <hr>
@@ -557,7 +558,7 @@
             <li><a href="#" onclick=" openCartBar()">
                 <div class="cart-container">
                     <div class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
-                    <div class="cart-counter">0</div>
+                    <div class="cart-counter bottom-cart-counter">0</div>
                 </div>
                 <p>Cart</p>
             </a></li>
@@ -585,6 +586,7 @@
 <script src="js/mens.js"></script>
 <script src="js/womens.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cartCalculation.js"></script>
 
 <script>
 // Sticky Navbar

@@ -81,7 +81,7 @@
                     
                     <div class="cart-container">
                         <div onclick="openCartBar()" class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
-                        <div class="cart-counter">0</div>
+                        <div class="cart-counter top-cart-counter">0</div>
                     </div>
                     
                     <div class="txt-area">
@@ -231,7 +231,9 @@
     </div><br>
     <h2 class="cart-title">Your Cart</h2><hr>
 
+    
     <div class="cart-content">
+        <!-- Recreatable component -->
         <div class="cart-box">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
@@ -245,8 +247,6 @@
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
-    </div>
-    <div class="cart-content">
         <div class="cart-box">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
@@ -260,6 +260,7 @@
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
+        <!-- End -->
     </div>
 
     <hr>
@@ -298,7 +299,7 @@
             </div>
             <div class="product-details">
                 <div>
-                    <h2>Brown Polo T-Shirt For Men</h2>
+                    <h2 class="js-waypoint-sticky">Brown Polo T-Shirt For Men</h2>
                     <br>
                     <p class="description">This is a short description of the product highlighting its features and benefits.This is a short description of the product highlighting its features and benefits.</p>
                     <h3 class="price">Tk. 1450</h3>
@@ -421,7 +422,7 @@
             <li><a href="#" onclick=" openCartBar()">
                 <div class="cart-container">
                     <div class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
-                    <div class="cart-counter">0</div>
+                    <div class="cart-counter bottom-cart-counter">0</div>
                 </div>
                 <p>Cart</p>
             </a></li>
@@ -449,6 +450,7 @@
 <script src="js/mens.js"></script>
 <script src="js/womens.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cartCalculation.js"></script>
 
 <script>
 // Sticky Navbar
@@ -457,6 +459,7 @@ $(document).ready(function () {
         "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
     });
 });
+
 
 // Increment and Decrement product quantity
 const num = document.querySelector(".num");
@@ -472,7 +475,6 @@ const minus = ()=> {
         num.innerText = q;
     }
 }
-
 </script>
 
 </body>
