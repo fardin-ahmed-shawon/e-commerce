@@ -23,6 +23,17 @@ closeSearchBtn.addEventListener('click', ()=>{
     searchBtn.style.display = 'block';
 });
 
+// Cart Bar Open and Close
+const cart = document.querySelector('.cart');
+
+function openCartBar() {
+    cart.style.right = '0';
+}
+
+function closeCartBar() {
+    cart.style.right = '-100%';
+}
+
 
 /***************************************************/
 /* Add new arrival products dynamically home page */

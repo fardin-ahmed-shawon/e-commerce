@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/cartbar.css">
     <link rel="stylesheet" href="css/profile.css">
 
     <!--========== Remixicon ==========-->
@@ -77,7 +78,7 @@
                 <div class="cart-btn">
                     
                     <div class="cart-container">
-                        <div class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
+                        <div onclick="openCartBar()" class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
                         <div class="cart-counter">0</div>
                     </div>
                     
@@ -215,6 +216,63 @@
 </nav>
 <!--==================================-->
 <!--============ END NAVBAR ==========-->
+<!--==================================-->
+
+
+
+<!--====================================-->
+<!--========== START CART BAR ==========-->
+<!--====================================-->
+<section class="cart">
+    <div class="cls-btn-area text-end" onclick="closeCartBar()">
+        <i class="ri-close-large-fill"></i>
+    </div><br>
+    <h2 class="cart-title">Your Cart</h2><hr>
+
+    <div class="cart-content">
+        <div class="cart-box">
+            <img src="img/product.jpg" alt="cart-img">
+            <div class="cart-details">
+                <h2 class="cart-product-title">Casula Navy Blue Shirt</h2>
+                <span class="cart-price">Tk. 1350</span>
+                <div class="cart-quantity">
+                    <button id="decrement">-</button>
+                    <span class="number">1</span>
+                    <button id="increment">+</button>
+                </div>
+            </div>
+            <i class="ri-delete-bin-line cart-remove"></i>
+        </div>
+    </div>
+    <div class="cart-content">
+        <div class="cart-box">
+            <img src="img/product.jpg" alt="cart-img">
+            <div class="cart-details">
+                <h2 class="cart-product-title">Casula Navy Blue Shirt</h2>
+                <span class="cart-price">Tk. 1350</span>
+                <div class="cart-quantity">
+                    <button id="decrement">-</button>
+                    <span class="number">1</span>
+                    <button id="increment">+</button>
+                </div>
+            </div>
+            <i class="ri-delete-bin-line cart-remove"></i>
+        </div>
+    </div>
+
+    <hr>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price text-end">Tk. 2500</div>
+    </div>
+    <br>
+    <div class="cart-bottom-button">
+        <button class="btn btn-dark btn-checkout">Checkout</button>
+        <button class="btn btn-dark btn-cart">View Cart</button>
+    </div>
+</section>
+<!--==================================-->
+<!--========== END CART BAR ==========-->
 <!--==================================-->
 
 
@@ -369,7 +427,7 @@
                 <i class="ri-phone-line"></i>
                 <p>Call</p>
             </a></li>
-            <li><a href="#">
+            <li><a href="#" onclick=" openCartBar()">
                 <div class="cart-container">
                     <div class="cart-icon"><i class="ri-shopping-cart-2-line"></i></div>
                     <div class="cart-counter">0</div>
