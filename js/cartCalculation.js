@@ -61,7 +61,8 @@ var total_price;
                 cart_content.appendChild(cartList);
             });
             total_price_container.innerHTML = `Tk. ${total_price}`;
-            // cart counter
+
+            // cart counter on top and bottom icons
             const top_cart_counter = document.querySelector('.top-cart-counter');
             const bottom_cart_counter = document.querySelector('.bottom-cart-counter');
 

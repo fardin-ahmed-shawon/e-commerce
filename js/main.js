@@ -1,8 +1,12 @@
 // Menu bar open and close
 const pages = document.getElementById('pages');
 
-function menuBtn() {
-    pages.classList.toggle("width-minimizer");
+function openMenuBtn() {
+    pages.style.left = '0';
+}
+
+function closeMenuBtn() {
+    pages.style.left = '-100%';
 }
 
 // Search bar open and close
@@ -31,11 +35,7 @@ function openCartBar() {
 }
 
 function closeCartBar() {
-    if (window.matchMedia("(max-width: 360px)").matches) {
-        cart.style.right = '-150%';
-    } else {
-        cart.style.right = '-100%';
-    }
+    cart.style.right = '-100%';
 }
 
 
