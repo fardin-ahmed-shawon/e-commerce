@@ -228,39 +228,37 @@
         <i class="ri-close-large-fill"></i>
     </div><br>
     <h2 class="cart-title">Your Cart</h2><hr>
-
-    
     <div class="cart-content">
         <!-- Recreatable component -->
-        <div class="cart-box">
+        <div class="cart-box" id="1">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
                 <h2 class="cart-product-title">Casula Navy Blue Shirt</h2>
                 <span class="cart-price">Tk. 1350</span>
                 <div class="cart-quantity">
-                    <button id="decrement">-</button>
+                    <button class="decrement">-</button>
                     <span class="number">1</span>
-                    <button id="increment">+</button>
+                    <button class="increment">+</button>
                 </div>
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
-        <div class="cart-box">
+        
+        <div class="cart-box" id="2">
             <img src="img/product.jpg" alt="cart-img">
             <div class="cart-details">
                 <h2 class="cart-product-title">Casula Navy Blue Shirt</h2>
                 <span class="cart-price">Tk. 1350</span>
                 <div class="cart-quantity">
-                    <button id="decrement">-</button>
+                    <button class="decrement">-</button>
                     <span class="number">1</span>
-                    <button id="increment">+</button>
+                    <button class="increment">+</button>
                 </div>
             </div>
             <i class="ri-delete-bin-line cart-remove"></i>
         </div>
         <!-- End -->
     </div>
-
     <hr>
     <div class="total">
         <div class="total-title">Total</div>
@@ -422,6 +420,7 @@
 <script src="js/womens.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cartCalculation.js"></script>
+<script src="js/quantity.js"></script>
 
 <script>
 // Sticky Navbar

@@ -50,9 +50,9 @@ var total_price;
                         <h2 class="cart-product-title">${item.name}</h2>
                         <span class="cart-price">Tk. ${item.price}</span>
                         <div class="cart-quantity">
-                            <button id="decrement">-</button>
+                            <button class="decrement" id="decrement">-</button>
                             <span class="number">1</span>
-                            <button id="increment">+</button>
+                            <button class="increment" id="increment">+</button>
                         </div>
                     </div>
                     <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>

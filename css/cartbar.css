@@ -12,6 +12,13 @@
     transition: .4s;
 }
 
+@media only screen and (max-width: 360px) {
+    .cart {
+        width: auto;
+        right: -150%;
+    }
+}
+
 .cart-title {
     text-align: center;
     font-size: 25px;

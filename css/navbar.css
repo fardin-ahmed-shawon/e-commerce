@@ -320,12 +320,12 @@ nav .inner {
         z-index: 99;
         background: var(--white);
         position: fixed;
-        left: -100%;
+        left: -120%;
         top: 0;
         width: 350px;
         height: 100%;
         padding: 0;
-        transition: all .5s;
+        transition: all .4s;
         box-shadow: rgba(99, 99, 99, 0.2) 8px 4px 8px 1px;
         overflow-y: auto;
     }

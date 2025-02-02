@@ -31,7 +31,11 @@ function openCartBar() {
 }
 
 function closeCartBar() {
-    cart.style.right = '-100%';
+    if (window.matchMedia("(max-width: 360px)").matches) {
+        cart.style.right = '-150%';
+    } else {
+        cart.style.right = '-100%';
+    }
 }
 
 
