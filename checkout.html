@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce | Profile</title>
-    
+    <title>E-Commerce | Checkout</title>
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cartbar.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/checkout.css">
 
     <!--========== Remixicon ==========-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
@@ -244,66 +245,150 @@
 
 
 
+<!--==============================================-->
+<!--============ START CHECKOUT SECTION ==========-->
 <!--============================================-->
-<!--============ START PROFILE SECTION =========-->
-<!--============================================-->
-<section class="profile py-5 js-waypoint-sticky">
-    <div class="container">
-        <h1 class="text-center pb-5">Profile</h1>
-        <div class="profile-container">
-        <div style="overflow-x: auto;">
-            <div style="overflow-x: auto;">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>First Name</td>
-                                <td>:</td>
-                                <td>Fardin</td>
-                            </tr>
-                            <tr>
-                                <td>Last Name</td>
-                                <td>:</td>
-                                <td>Ahmed</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>fardinahmed7443@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>Phone Number</td>
-                                <td>:</td>
-                                <td>01944667441</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>:</td>
-                                <td>Dhanmondi, Dhaka-1209</td>
-                            </tr>
-                        </tbody>
-                    </table>
+<section class="checkout py-5">
+    <div class="container js-waypoint-sticky">
+        <h1 class="text-center">Checkout</h1><hr><br>
+        <br>
+        <div class="checkout-container">
+            <!-- left area -->
+            <div class="checkout">
+                <div class="title">Billing Address</div>
+                <div class="content">
+                  <!-- Login form -->
+                  <form action="#">
+                    <div class="user-details full-input-box">
+                        <!-- Input for First Name -->
+                        <div class="input-box">
+                            <span class="details">First Name</span>
+                            <input type="text" placeholder="Enter your first name" required>
+                        </div>
+                        <!-- Input for Lasat Name -->
+                        <div class="input-box">
+                            <span class="details">Last Name</span>
+                            <input type="text" placeholder="Enter your last name" required>
+                        </div>
+                        <!-- Input for phone number -->
+                        <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="text" placeholder="Enter your number" required>
+                        </div>
+                        <!-- Input for email number -->
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <!-- Input for address -->
+                        <div class="input-box">
+                            <span class="details">Town / City</span>
+                            <input type="text" placeholder="Enter your city / town name" required>
+                        </div>
+                        <!-- Input for address -->
+                        <div class="input-box">
+                            <span class="details">Address</span>
+                            <input type="text" placeholder="Enter your address" required>
+                        </div>
+                    </div>
+    
+    
+                    <!-- Submit button -->
+                    <div class="button">
+                      <input type="submit" value="Place Order">
+                    </div>
+                  </form>
+    
+                </div>
             </div>
-            <br>
-            <div class="profile-btn-container">
-                <a href="editProfile.html">
-                    <button class="btn btn-dark">
-                        Edit Information <i class="ri-edit-box-line"></i>
-                    </button>
-                </a>    
-                <a href="#">
-                    <button class="btn btn-dark">
-                       Logout <i class="ri-logout-box-line"></i>
-                    </button>
-                </a>
-            </div>
-        </div>
+            <!-- Right area -->
+            <div class="order-info">
+                <div class="products-info">
+                    <div class="title">Your Order</div>
+                    <br>
+                    <div class="order-list">
+                        <div class="order-titles">
+                            <h5>Products</h5>
+                            <h5>Subtotal</h5>
+                        </div>
+                        <div class="order-items">
+                            <!-- Cart item -->
+                            <div class="order-item">
+                                <div class="order-product-info">
+                                    <div class="cart-box">
+                                        <img src="img/product.jpg" alt="cart-img">
+                                        <div class="cart-details">
+                                            <h2 class="cart-product-title">Navy Blue Striped Shirt</h2>
+                                            <div class="cart-quantity">
+                                                <button class="decrement" id="decrement">-</button>
+                                                <span class="number">1</span>
+                                                <button class="increment" id="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-product-price">Tk. 120</div>
+                            </div>
+                            <!-- Cart item -->
+                            <div class="order-item">
+                                <div class="order-product-info">
+                                    <div class="cart-box">
+                                        <img src="img/product.jpg" alt="cart-img">
+                                        <div class="cart-details">
+                                            <h2 class="cart-product-title">Navy Blue Striped Shirt</h2>
+                                            <div class="cart-quantity">
+                                                <button class="decrement" id="decrement">-</button>
+                                                <span class="number">1</span>
+                                                <button class="increment" id="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-product-price">Tk. 120</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="subtotal">
+                            <div class="subtotal-title">Subtotal</div>
+                            <div class="subtotal-price">Tk. 240</div>
+                        </div><br>
+                        <div class="shipping">
+                            <div class="shipping-title">Shipping</div>
+                            <div class="shipping-price">Tk. 70</div>
+                        </div>
+                        <hr>
+                        <div class="total-product-price">
+                            <div class="total-product-price-title">Total</div>
+                            <div class="total-product-price-price">Tk. 310</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom -->
+                <br>
+                <div class="payment-info">
+                    <div class="title">Payment Method</div>
+                    <br>
+                    <!-- <form action="#"> -->
+                        <div class="selection-box">
+                            <input type="radio" id="mobile_banking" name="payment_method" value="Mobile Banking">
+                            <label for="mobile_banking">Mobile Banking</label><br>
+                        </div>
+                        <div class="selection-box">
+                            <input type="radio" id="cod" name="payment_method" value="COD">
+                            <label for="cod">COD</label><br>
+                        </div>
+                        <br>
+                    <!-- </form> -->
+                </div>
+            </div>    
         </div>
         <br><hr>
     </div>
 </section>
-<!--===========================================-->
-<!--============ END PROFILE SECTION ==========-->
-<!--===========================================-->
+<!--==============================================-->
+<!--============ END CHECKOUT SECTION ==========-->
+<!--============================================-->
+
 
 
 <!--=============================================-->
@@ -422,38 +507,20 @@
 <script src="js/jquery.waypoints.min.js"></script>
 
 <!-- Main JS -->
+<script src="js/mens.js"></script>
+<script src="js/womens.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cartCalculation.js"></script>
+<script src="js/quantity.js"></script>
 
 <script>
-    function myFunction() {
-    // Sticky Navbar
-    $(document).ready(function () {
-            $(".js-waypoint-sticky").waypoint(function (t) {
-                "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
-            });
-        });
-    }
-
-    function handleResize(event) {
-    if (event.matches) {
-        // The width matches the condition
-        myFunction();
-    } else {
-        console.log("Device width does not match the condition.");
-    }
-    }
-
-    // Define the device width condition
-    const mediaQuery = window.matchMedia("(max-width: 1150px)"); // Example: max-width of 768px
-
-    // Add an event listener to monitor changes in width
-    mediaQuery.addEventListener("change", handleResize);
-
-    // Run the function on initial load if the condition matches
-    if (mediaQuery.matches) {
-    myFunction();
-    }
+// Sticky Navbar
+$(document).ready(function () {
+    $(".js-waypoint-sticky").waypoint(function (t) {
+        "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+    });
+});
 </script>
-    
+
 </body>
 </html>
