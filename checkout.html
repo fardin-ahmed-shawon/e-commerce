@@ -220,14 +220,11 @@
         <i class="ri-close-large-fill"></i>
     </div><br>
     <h2 class="cart-title">Your Cart</h2><hr>
-
-    
     <div class="cart-content">
         <!-- Recreatable component -->
         <h2 style="border-radius: 10px;padding: 30px 0;background: var(--topback);" class="card cart-title">No Items Found</h2>
         <!-- End -->
     </div>
-
     <hr>
     <div class="total">
         <div class="total-title">Total</div>
@@ -291,12 +288,7 @@
                             <input type="text" placeholder="Enter your address" required>
                         </div>
                     </div>
-                    <!-- Submit button -->
-                    <!-- <div class="button">
-                      <input type="submit" value="Place Order">
-                    </div> -->
                   </form>
-    
                 </div>
             </div>
             <!-- Right area -->
@@ -372,11 +364,9 @@
                             <input type="radio" id="cod" name="payment_method" value="Cash On Delivery">
                             <label for="cod">Cash On Delivery</label><br>
                         </div>
-
                         <div class="selection-box">
                             <p>Mobile Banking</p>
                             <br>
-
                             <!-- Accordian Start -->
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
@@ -526,14 +516,12 @@
 
                             </div>
                             <!-- Accordian End -->
-                    
                         </div>
-
                         <br>
                         <div class="button">
                             <input class="btn btn-dark px-5 py-3" type="submit" value="Place Order">
                         </div>
-                        <br>
+                    <br>
                 </div>
             </div>    
         </div>
@@ -669,12 +657,34 @@
 <script src="js/quantity.js"></script>
 
 <script>
-// Sticky Navbar
-$(document).ready(function () {
-    $(".js-waypoint-sticky").waypoint(function (t) {
-        "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
-    });
-});
+    function myFunction() {
+    // Sticky Navbar
+    $(document).ready(function () {
+            $(".js-waypoint-sticky").waypoint(function (t) {
+                "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+            });
+        });
+    }
+
+    function handleResize(event) {
+        if (event.matches) {
+            // The width matches the condition
+            myFunction();
+        } else {
+            console.log("Device width does not match the condition.");
+        }
+    }
+
+    // Define the device width condition
+    const mediaQuery = window.matchMedia("(max-width: 1150px)"); // Example: max-width of 768px
+
+    // Add an event listener to monitor changes in width
+    mediaQuery.addEventListener("change", handleResize);
+
+    // Run the function on initial load if the condition matches
+    if (mediaQuery.matches) {
+        myFunction();
+    }
 </script>
 
 </body>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cartbar.css">
+    <link rel="stylesheet" href="css/viewCart.css">
 
     <!--========== Remixicon ==========-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
@@ -244,15 +245,94 @@
 
 
 <!--==============================================-->
-<!--============ START CHECKOUT SECTION ==========-->
+<!--============ START VIEW CART SECTION ==========-->
 <!--============================================-->
 <section class="checkout py-5 js-waypoint-sticky">
     <div class="container">
-        <h1>View Cart</h1>
+        <h1 class="text-center">Cart</h1><br>
+        <br>
+        <div class="view-cart-container">
+            <!-- Left Area -->
+            <div class="cart-list">
+                <!-- Cart item -->
+                <div class="cart-item">
+                    <div class="product-img">
+                        <img src="img/product.jpg" alt="cart-img">
+                    </div>
+                    <div class="product-title">
+                        <h5>Navy Blue Striped Shirt</h5>
+                    </div>
+                    <div class="unit-price">
+                        Tk. <span>1000</span>
+                    </div>
+                    <div class="quantity cart-box">
+                        <div class="cart-quantity">
+                            <button class="decrement" id="decrement">-</button>
+                            <span class="number">1</span>
+                            <button class="increment" id="increment">+</button>
+                        </div>       
+                    </div>
+                    <div class="final-price">
+                        Tk. 1700
+                    </div>
+                    <div class="remove-product">
+                        <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="product-img">
+                        <img src="img/product.jpg" alt="cart-img">
+                    </div>
+                    <div class="product-title">
+                        <h5>Navy Blue Striped Shirt</h5>
+                    </div>
+                    <div class="unit-price">
+                        Tk. <span>1000</span>
+                    </div>
+                    <div class="quantity cart-box">
+                        <div class="cart-quantity">
+                            <button class="decrement" id="decrement">-</button>
+                            <span class="number">1</span>
+                            <button class="increment" id="increment">+</button>
+                        </div>       
+                    </div>
+                    <div class="final-price">
+                        Tk. 1700
+                    </div>
+                    <div class="remove-product">
+                        <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Area -->
+            <div class="carts-total">
+                <div class="carts-total-box">
+                    <h5>Cart Totals</h5>
+                    <br>
+                    <div class="subtotal">
+                        <p>Subtotals</p>
+                        <p>Tk. 100000</p>
+                    </div>
+                    <div class="shipping pb-3">
+                        <p>Shipping</p>
+                        <p>Tk. 70</p>
+                    </div>
+                    <hr>
+                    <div class="total pt-3">
+                        <p>Total</p>
+                        <h5>Tk. 100070</h5>
+                    </div>
+                </div>
+                <br>
+                <button onclick="window.location.href='checkout.html'" class="btn btn-dark py-3">Proceed To Checkout</button>
+            </div>
+        </div>
+        <br><hr>
     </div>
 </section>
 <!--==============================================-->
-<!--============ END CHECKOUT SECTION ==========-->
+<!--============ END IEW CART SECTION ==========-->
 <!--============================================-->
 
 
@@ -380,12 +460,34 @@
 <script src="js/quantity.js"></script>
 
 <script>
-// Sticky Navbar
-$(document).ready(function () {
-    $(".js-waypoint-sticky").waypoint(function (t) {
-        "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
-    });
-});
+    function myFunction() {
+    // Sticky Navbar
+    $(document).ready(function () {
+            $(".js-waypoint-sticky").waypoint(function (t) {
+                "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+            });
+        });
+    }
+
+    function handleResize(event) {
+        if (event.matches) {
+            // The width matches the condition
+            myFunction();
+        } else {
+            console.log("Device width does not match the condition.");
+        }
+    }
+
+    // Define the device width condition
+    const mediaQuery = window.matchMedia("(max-width: 1150px)"); // Example: max-width of 768px
+
+    // Add an event listener to monitor changes in width
+    mediaQuery.addEventListener("change", handleResize);
+
+    // Run the function on initial load if the condition matches
+    if (mediaQuery.matches) {
+        myFunction();
+    }
 </script>
 
 </body>

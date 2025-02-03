@@ -459,12 +459,12 @@
     }
 
     function handleResize(event) {
-    if (event.matches) {
-        // The width matches the condition
-        myFunction();
-    } else {
-        console.log("Device width does not match the condition.");
-    }
+        if (event.matches) {
+            // The width matches the condition
+            myFunction();
+        } else {
+            console.log("Device width does not match the condition.");
+        }
     }
 
     // Define the device width condition
