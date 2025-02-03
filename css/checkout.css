@@ -70,3 +70,32 @@ form .user-details .input-box {
 .payment-info .selection-box input {
     cursor: pointer;
 }
+
+.selection-box label {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.selection-box .input-box label {
+    margin-left: 0;
+}
+
+.selection-box .input-box input {
+    padding: 15px;
+}
+
+.selection-box p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.input-box label {
+    font-size: 16px;
+}
+
+.payment-instructions p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+

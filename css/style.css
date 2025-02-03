@@ -75,6 +75,13 @@ ul, li {
     background: var(--themehover);
 }
 
+.text-danger{
+    color: var(--theme);
+}
+.text-danger:hover {
+    color: var(--themehover);
+} 
+
 /* Grid Container 2x */
 .grid-container-2x {
     display: grid;
