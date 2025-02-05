@@ -1,2 +1,2 @@
 # E-Commerce Web Application
-# https://easy-commerce.netlify.app/
+# Live Preview: https://easy-commerce.netlify.app/
