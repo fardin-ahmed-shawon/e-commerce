@@ -301,55 +301,22 @@
                             <h5>Products</h5>
                             <h5>Subtotal</h5>
                         </div><hr>
-                        <div class="order-items">
-                            <!-- Cart item -->
-                            <div class="order-item">
-                                <div class="order-product-info">
-                                    <div class="cart-box">
-                                        <img src="img/product.jpg" alt="cart-img">
-                                        <div class="cart-details">
-                                            <h2 class="cart-product-title">Navy Blue Striped Shirt</h2>
-                                            <div class="cart-quantity">
-                                                <button class="decrement" id="decrement">-</button>
-                                                <span class="number">1</span>
-                                                <button class="increment" id="increment">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="order-product-price amount">Tk. 120</div>
-                            </div>
-                            <!-- Cart item -->
-                            <div class="order-item">
-                                <div class="order-product-info">
-                                    <div class="cart-box">
-                                        <img src="img/product.jpg" alt="cart-img">
-                                        <div class="cart-details">
-                                            <h2 class="cart-product-title">Navy Blue Striped Shirt</h2>
-                                            <div class="cart-quantity">
-                                                <button class="decrement" id="decrement">-</button>
-                                                <span class="number">1</span>
-                                                <button class="increment" id="increment">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="order-product-price amount">Tk. 120</div>
-                            </div>
+                        <div class="order-items" id="order-items">
+                        <!-- Cart item will add dynamically -->
                         </div>
                         <hr>
                         <div class="subtotal">
                             <div class="subtotal-title">Subtotal</div>
-                            <div class="subtotal-price amount">Tk. 240</div>
+                            <div class="subtotal-price amount" id="subtotal-price">Tk. 0</div>
                         </div><br>
                         <div class="shipping">
                             <div class="shipping-title">Shipping</div>
-                            <div class="shipping-price amount">Tk. 70</div>
+                            <div class="shipping-price amount" id="shipping-price">Tk. 0</div>
                         </div>
                         <hr>
                         <div class="total-product-price">
                             <div class="total-product-price-title">Total</div>
-                            <div class="total-product-price-price amount">Tk. 310</div>
+                            <div class="total-product-price-price amount" id="total-price">Tk. 0</div>
                         </div>
                     </div>
                 </div>
@@ -684,6 +651,47 @@
     if (mediaQuery.matches) {
         myFunction();
     }
+
+
+// Cart item show from the Local Storage
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+            const orderItemsContainer = document.getElementById('order-items');
+            const subtotalPriceContainer = document.getElementById('subtotal-price');
+            const shippingPriceContainer = document.getElementById('shipping-price');
+            const totalPriceContainer = document.getElementById('total-price');
+            let subtotal = 0;
+            // Enter a shipping cost
+            let shipping = 70;
+
+            cartData.forEach(item => {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'order-item';
+                orderItem.innerHTML = `
+                    <div class="order-product-info">
+                        <div class="cart-box">
+                            <img src="${item.image}" alt="cart-img">
+                            <div class="cart-details">
+                                <h2 class="cart-product-title">${item.name}</h2>
+                                <div class="cart-quantity">
+                                    <button class="decrement" id="decrement">-</button>
+                                    <span class="number">${item.quantity}</span>
+                                    <button class="increment" id="increment">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-product-price amount">Tk. ${item.price * item.quantity}</div>
+                `;
+                subtotal += item.price * item.quantity;
+                orderItemsContainer.appendChild(orderItem);
+            });
+
+            subtotalPriceContainer.textContent = `Tk. ${subtotal}`;
+            shippingPriceContainer.textContent = `Tk. ${shipping}`;
+            totalPriceContainer.textContent = `Tk. ${subtotal + shipping}`; // Assuming shipping cost is 70
+        });
+
 </script>
 
 </body>

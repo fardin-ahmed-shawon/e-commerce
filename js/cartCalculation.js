@@ -69,6 +69,9 @@ var total_price;
 
             top_cart_counter.innerHTML = carts.length;
             bottom_cart_counter.innerHTML = carts.length;
+
+            // Save cart data to local storage
+            localStorage.setItem('cartData', JSON.stringify(carts));
         }
 
         function removeCart(button) {
