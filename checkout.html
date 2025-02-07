@@ -654,22 +654,21 @@
 
 
 // Cart item show from the Local Storage
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
             const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
             const orderItemsContainer = document.getElementById('order-items');
             const subtotalPriceContainer = document.getElementById('subtotal-price');
             const shippingPriceContainer = document.getElementById('shipping-price');
             const totalPriceContainer = document.getElementById('total-price');
             let subtotal = 0;
-            // Enter a shipping cost
-            let shipping = 70;
+            const shipping = 70; // Assuming shipping cost is 70
 
             cartData.forEach(item => {
                 const orderItem = document.createElement('div');
                 orderItem.className = 'order-item';
                 orderItem.innerHTML = `
                     <div class="order-product-info">
-                        <div class="cart-box">
+                        <div class="cart-box" id="${item.id}">
                             <img src="${item.image}" alt="cart-img">
                             <div class="cart-details">
                                 <h2 class="cart-product-title">${item.name}</h2>
@@ -689,8 +688,69 @@
 
             subtotalPriceContainer.textContent = `Tk. ${subtotal}`;
             shippingPriceContainer.textContent = `Tk. ${shipping}`;
-            totalPriceContainer.textContent = `Tk. ${subtotal + shipping}`; // Assuming shipping cost is 70
+            totalPriceContainer.textContent = `Tk. ${subtotal + shipping}`;
 
+            // Add event listeners for increment and decrement buttons
+            orderItemsContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('increment')) {
+                    const cartBox = event.target.closest('.cart-box');
+                    const quantitySpan = cartBox.querySelector('.number');
+                    let quantity = parseInt(quantitySpan.textContent);
+                    if (!isNaN(quantity)) {
+                        quantity += 1;
+                        quantitySpan.textContent = quantity;
+
+                        // Update the quantity in the cartData array
+                        const productId = cartBox.getAttribute('id');
+                        const cartItem = cartData.find(item => item.id === productId);
+                        if (cartItem) {
+                            cartItem.quantity = quantity;
+                            localStorage.setItem('cartData', JSON.stringify(cartData));
+                        }
+
+                        // Update the final price
+                        const finalPrice = cartBox.closest('.order-item').querySelector('.order-product-price');
+                        finalPrice.textContent = `Tk. ${cartItem.price * cartItem.quantity}`;
+
+                        // Update the subtotal and total prices
+                        updatePrices();
+                    }
+                }
+
+                if (event.target.classList.contains('decrement')) {
+                    const cartBox = event.target.closest('.cart-box');
+                    const quantitySpan = cartBox.querySelector('.number');
+                    let quantity = parseInt(quantitySpan.textContent);
+                    if (!isNaN(quantity) && quantity > 1) {
+                        quantity -= 1;
+                        quantitySpan.textContent = quantity;
+
+                        // Update the quantity in the cartData array
+                        const productId = cartBox.getAttribute('id');
+                        const cartItem = cartData.find(item => item.id === productId);
+                        if (cartItem) {
+                            cartItem.quantity = quantity;
+                            localStorage.setItem('cartData', JSON.stringify(cartData));
+                        }
+
+                        // Update the final price
+                        const finalPrice = cartBox.closest('.order-item').querySelector('.order-product-price');
+                        finalPrice.textContent = `Tk. ${cartItem.price * cartItem.quantity}`;
+
+                        // Update the subtotal and total prices
+                        updatePrices();
+                    }
+                }
+            });
+
+            function updatePrices() {
+                let newSubtotal = 0;
+                cartData.forEach(item => {
+                    newSubtotal += item.price * item.quantity;
+                });
+                subtotalPriceContainer.textContent = `Tk. ${newSubtotal}`;
+                totalPriceContainer.textContent = `Tk. ${newSubtotal + shipping}`;
+            }
         });
 
 </script>
