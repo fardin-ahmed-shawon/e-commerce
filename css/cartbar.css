@@ -24,7 +24,7 @@
     font-weight: 700;
 }
 
-.cart-box {
+.cart-content .cart-box {
     display: flex;
     align-items: center;
     margin-top: 20px;
