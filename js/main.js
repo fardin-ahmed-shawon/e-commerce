@@ -135,7 +135,7 @@ mens.map(item => {
             </div>`;
             
         // Insert card into the product container
-        top_selling_products.appendChild(card); 
+        top_selling_products.appendChild(card);
         count_top++;
     }
 })
