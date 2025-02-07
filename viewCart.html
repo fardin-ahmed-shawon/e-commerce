@@ -253,9 +253,9 @@
         <br>
         <div class="view-cart-container">
             <!-- Left Area -->
-            <div class="cart-list">
+            <div class="cart-list" id="cart-list">
                 <!-- Cart item -->
-                <div class="cart-item">
+                <!-- <div class="cart-item">
                     <div class="product-img">
                         <img src="img/product.jpg" alt="cart-img">
                     </div>
@@ -278,32 +278,8 @@
                     <div class="remove-product">
                         <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="cart-item">
-                    <div class="product-img">
-                        <img src="img/product.jpg" alt="cart-img">
-                    </div>
-                    <div class="product-title">
-                        <h5>Navy Blue Striped Shirt</h5>
-                    </div>
-                    <div class="unit-price">
-                        Tk. <span>1000</span>
-                    </div>
-                    <div class="quantity cart-box">
-                        <div class="cart-quantity">
-                            <button class="decrement" id="decrement">-</button>
-                            <span class="number">1</span>
-                            <button class="increment" id="increment">+</button>
-                        </div>       
-                    </div>
-                    <div class="final-price">
-                        Tk. 1700
-                    </div>
-                    <div class="remove-product">
-                        <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>
-                    </div>
-                </div>
             </div>
             <!-- Right Area -->
             <div class="carts-total">
@@ -312,16 +288,16 @@
                     <br>
                     <div class="subtotal">
                         <p>Subtotals</p>
-                        <p>Tk. 100000</p>
+                        <p id="subtotal-price">Tk. 100000</p>
                     </div>
                     <div class="shipping pb-3">
                         <p>Shipping</p>
-                        <p>Tk. 70</p>
+                        <p id="shipping-price">Tk. 70</p>
                     </div>
                     <hr>
                     <div class="total pt-3">
                         <p>Total</p>
-                        <h5>Tk. 100070</h5>
+                        <h5 id="total-price">Tk. 100070</h5>
                     </div>
                 </div>
                 <br>
@@ -487,6 +463,131 @@
     if (mediaQuery.matches) {
         myFunction();
     }
+
+    
+// Cart item show from the Local Storage
+document.addEventListener('DOMContentLoaded', () => {
+            const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+            const cartListContainer = document.getElementById('cart-list');
+            const subtotalPriceContainer = document.getElementById('subtotal-price');
+            const shippingPriceContainer = document.getElementById('shipping-price');
+            const totalPriceContainer = document.getElementById('total-price');
+            let subtotal = 0;
+            const shipping = 70; // Assuming shipping cost is 70
+
+            cartData.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="product-img">
+                        <img src="${item.image}" alt="cart-img">
+                    </div>
+                    <div class="product-title">
+                        <h5>${item.name}</h5>
+                    </div>
+                    <div class="unit-price">
+                        Tk. <span>${item.price}</span>
+                    </div>
+                    <div class="quantity cart-box" id="${item.id}">
+                        <div class="cart-quantity">
+                            <button class="decrement" id="decrement">-</button>
+                            <span class="number">${item.quantity}</span>
+                            <button class="increment" id="increment">+</button>
+                        </div>       
+                    </div>
+                    <div class="final-price">
+                        Tk. ${item.price * item.quantity}
+                    </div>
+                    <div class="remove-product">
+                        <i onclick="removeCart(this)" class="ri-delete-bin-line cart-remove"></i>
+                    </div>
+                `;
+                subtotal += item.price * item.quantity;
+                cartListContainer.appendChild(cartItem);
+            });
+
+            subtotalPriceContainer.textContent = `Tk. ${subtotal}`;
+            totalPriceContainer.textContent = `Tk. ${subtotal + shipping}`;
+
+            // Add event listeners for increment and decrement buttons
+            cartListContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('increment')) {
+                    const cartBox = event.target.closest('.cart-box');
+                    const quantitySpan = cartBox.querySelector('.number');
+                    let quantity = parseInt(quantitySpan.textContent);
+                    if (!isNaN(quantity)) {
+                        quantity += 1;
+                        quantitySpan.textContent = quantity;
+
+                        // Update the quantity in the cartData array
+                        const productId = cartBox.getAttribute('id');
+                        const cartItem = cartData.find(item => item.id === productId);
+                        if (cartItem) {
+                            cartItem.quantity = quantity;
+                            localStorage.setItem('cartData', JSON.stringify(cartData));
+                        }
+
+                        // Update the final price
+                        const finalPrice = cartBox.closest('.cart-item').querySelector('.final-price');
+                        finalPrice.textContent = `Tk. ${cartItem.price * cartItem.quantity}`;
+
+                        // Update the subtotal and total prices
+                        updatePrices();
+                    }
+                }
+
+                if (event.target.classList.contains('decrement')) {
+                    const cartBox = event.target.closest('.cart-box');
+                    const quantitySpan = cartBox.querySelector('.number');
+                    let quantity = parseInt(quantitySpan.textContent);
+                    if (!isNaN(quantity) && quantity > 1) {
+                        quantity -= 1;
+                        quantitySpan.textContent = quantity;
+
+                        // Update the quantity in the cartData array
+                        const productId = cartBox.getAttribute('id');
+                        const cartItem = cartData.find(item => item.id === productId);
+                        if (cartItem) {
+                            cartItem.quantity = quantity;
+                            localStorage.setItem('cartData', JSON.stringify(cartData));
+                        }
+
+                        // Update the final price
+                        const finalPrice = cartBox.closest('.cart-item').querySelector('.final-price');
+                        finalPrice.textContent = `Tk. ${cartItem.price * cartItem.quantity}`;
+
+                        // Update the subtotal and total prices
+                        updatePrices();
+                    }
+                }
+            });
+
+            function updatePrices() {
+                let newSubtotal = 0;
+                cartData.forEach(item => {
+                    newSubtotal += item.price * item.quantity;
+                });
+                subtotalPriceContainer.textContent = `Tk. ${newSubtotal}`;
+                totalPriceContainer.textContent = `Tk. ${newSubtotal + shipping}`;
+            }
+        });
+
+        function removeCart(button) {
+            const cartBox = button.closest('.cart-item');
+            const productId = cartBox.querySelector('.cart-box').getAttribute('id');
+
+            // Remove the item from the cartData array
+            const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+            const updatedCartData = cartData.filter(item => item.id !== productId);
+            localStorage.setItem('cartData', JSON.stringify(updatedCartData));
+
+            // Remove the cart item from the DOM
+            cartBox.remove();
+            location.reload();
+            // Update the subtotal and total prices
+            updatePrices();
+        }
+
 </script>
 
 </body>
