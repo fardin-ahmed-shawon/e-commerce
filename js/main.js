@@ -56,6 +56,7 @@ mens.map(item => {
         card.setAttribute("product-title", `${item.title}`);
         card.setAttribute("product-img", `${item.images}`);
         card.setAttribute("product-price", `${item.price}`);
+        card.setAttribute("product-quantity", "1");
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -83,6 +84,7 @@ womens.map(item => {
         card.setAttribute("product-title", `${item.title}`);
         card.setAttribute("product-img", `${item.images}`);
         card.setAttribute("product-price", `${item.price}`);
+        card.setAttribute("product-quantity", "1");
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -119,6 +121,7 @@ mens.map(item => {
         card.setAttribute("product-title", `${item.title}`);
         card.setAttribute("product-img", `${item.images}`);
         card.setAttribute("product-price", `${item.price}`);
+        card.setAttribute("product-quantity", "1");
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -146,6 +149,7 @@ womens.map(item => {
         card.setAttribute("product-title", `${item.title}`);
         card.setAttribute("product-img", `${item.images}`);
         card.setAttribute("product-price", `${item.price}`);
+        card.setAttribute("product-quantity", "1");
             
         // Insert Product data into the card
         card.innerHTML = `
@@ -181,6 +185,7 @@ mens.map(item => {
     card.setAttribute("product-title", `${item.title}`);
     card.setAttribute("product-img", `${item.images}`);
     card.setAttribute("product-price", `${item.price}`);
+    card.setAttribute("product-quantity", "1");
         
     // Insert Product data into the card
     card.innerHTML = `
@@ -213,6 +218,7 @@ womens.map(item => {
     card.setAttribute("product-title", `${item.title}`);
     card.setAttribute("product-img", `${item.images}`);
     card.setAttribute("product-price", `${item.price}`);
+    card.setAttribute("product-quantity", "1");
         
     // Insert Product data into the card
     card.innerHTML = `
@@ -234,6 +240,3 @@ womens.map(item => {
 function changeImage(imageSrc) {
     document.getElementById('main-image').src = imageSrc;
 }
-
-
-
