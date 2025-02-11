@@ -75,6 +75,11 @@ ul, li {
     background: var(--themehover);
 }
 
+.btn-outline-dark:hover {
+    color: #000;
+    background: transparent;
+}
+
 .text-danger{
     color: var(--theme);
 }
