@@ -7,6 +7,11 @@
     grid-area: orderInfo;
 }
 
+.cart-box {
+    display: flex;
+}
+
+
 /* Layouting */
 .checkout-container {
     display: grid;

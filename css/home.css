@@ -24,6 +24,10 @@
     padding: 20px 30px;
 }
 
+.title-align-left p {
+    padding-right: 10px;
+}
+
 .btn-align-end {
     display: flex;
     align-items: end;
