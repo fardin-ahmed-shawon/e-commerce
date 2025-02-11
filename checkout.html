@@ -21,6 +21,25 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <style>
+        /* Add custom styles to ensure radio buttons are displayed correctly */
+        .radio-input-box input[type="radio"] {
+            height: 15px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .radio-input-box label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .radio-input-box .details {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -249,13 +268,14 @@
     <div class="container js-waypoint-sticky">
         <h1 class="text-center">Checkout</h1><hr><br>
         <br>
+        <!-- Checkout Form -->
+        <form action="#">
         <div class="checkout-container">
             <!-- left area -->
             <div class="checkout">
-                <div class="title">Billing Address</div>
+                <div class="title">Billing Address</div><br>
                 <div class="content">
-                  <!-- Login form -->
-                  <form action="#">
+                  <!-- input form -->
                     <div class="user-details full-input-box">
                         <!-- Input for First Name -->
                         <div class="input-box">
@@ -279,16 +299,24 @@
                         </div>
                         <!-- Input for address -->
                         <div class="input-box">
-                            <span class="details">Town / City</span>
-                            <input type="text" placeholder="Enter your city / town name" required>
-                        </div>
-                        <!-- Input for address -->
-                        <div class="input-box">
                             <span class="details">Address</span>
                             <input type="text" placeholder="Enter your address" required>
+                        </div><br>
+                        <!-- Input for town -->
+                        <div class="radio-input-box">
+                            <span class="details">Choose Your Delivery Location</span>
+                            <input type="radio" id="dhaka" name="city" value="Inside Dhaka" checked>
+                            <label for="dhaka">Inside Dhaka</label>
+                            <br>
+                            <input type="radio" id="outside" name="city" value="Outside Dhaka">
+                            <label for="outside">Outside Dhaka</label>
+                            <br><br>
+                            <i>
+                                <p class="text-muted">* Delivery Charge Inside Dhaka 70 Tk.</p>
+                                <p class="text-muted">* Delivery Charge Outside Dhaka 130 Tk.</p>
+                            </i>
                         </div>
                     </div>
-                  </form>
                 </div>
             </div>
             <!-- Right area -->
@@ -328,8 +356,10 @@
                         <div class="selection-box">
                             <p>Pay With Cash Upon Delivery</p>
                             <br>
-                            <input type="radio" id="cod" name="payment_method" value="Cash On Delivery">
-                            <label for="cod">Cash On Delivery</label><br>
+                            <div class="radio-input-box">
+                                <input type="radio" id="cod" name="payment_method" value="Cash On Delivery">
+                                <label for="cod">Cash On Delivery</label><br>
+                            </div>
                         </div>
                         <div class="selection-box">
                             <p>Mobile Banking</p>
@@ -339,8 +369,10 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onclick="document.getElementById('bKash').checked = true;">
-                                        <input type="radio" id="bKash" name="payment_method" value="bKash">
-                                        <label for="bKash">bKash</label>
+                                        <div class="radio-input-box">
+                                            <input type="radio" id="bKash" name="payment_method" value="bKash">
+                                            <label for="bKash">bKash</label>
+                                        </div>
                                     </button>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -376,8 +408,10 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" onclick="document.getElementById('nagad').checked = true;">
-                                        <input type="radio" id="nagad" name="payment_method" value="Nagad">
-                                        <label for="nagad">Nagad</label>
+                                        <div class="radio-input-box">
+                                            <input type="radio" id="nagad" name="payment_method" value="Nagad">
+                                            <label for="nagad">Nagad</label>
+                                        </div>
                                     </button>
                                   </h2>
                                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -412,8 +446,10 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" onclick="document.getElementById('rocket').checked = true;">
-                                        <input type="radio" id="rocket" name="payment_method" value="Rocket">
-                                        <label for="rocket">Rocket</label>
+                                        <div class="radio-input-box">
+                                            <input type="radio" id="rocket" name="payment_method" value="Rocket">
+                                            <label for="rocket">Rocket</label>
+                                        </div>
                                     </button>
                                   </h2>
                                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -448,8 +484,10 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-headingFour">
                                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" onclick="document.getElementById('upay').checked = true;">
-                                        <input type="radio" id="upay" name="payment_method" value="Upay">
-                                        <label for="upay">Upay</label>
+                                        <div class="radio-input-box">
+                                            <input type="radio" id="upay" name="payment_method" value="Upay">
+                                            <label for="upay">Upay</label>
+                                        </div>
                                       </button>
                                     </h2>
                                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
@@ -480,18 +518,18 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <!-- Accordian End -->
                         </div>
                         <br>
                         <div class="button">
-                            <input class="btn btn-dark px-5 py-3" type="submit" value="Place Order">
+                            <input class="btn btn-dark" type="submit" value="Place Order">
                         </div>
                     <br>
                 </div>
-            </div>    
+            </div>   
         </div>
+        </form>
         <br><hr>
     </div>
 </section>
@@ -661,7 +699,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const shippingPriceContainer = document.getElementById('shipping-price');
             const totalPriceContainer = document.getElementById('total-price');
             let subtotal = 0;
-            const shipping = 70; // Assuming shipping cost is 70
+
+            let shipping_inside_dhaka = 70;
+            let shipping_outside_dhaka = 130;
+            let shipping = shipping_inside_dhaka; // default shipping cost is 70
 
             cartData.forEach(item => {
                 const orderItem = document.createElement('div');
@@ -741,6 +782,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         updatePrices();
                     }
                 }
+            });
+
+            // Add event listeners for the radio buttons to update the shipping cost
+            document.getElementById('dhaka').addEventListener('change', () => {
+                shipping = shipping_inside_dhaka;
+                shippingPriceContainer.innerHTML = shipping_inside_dhaka;
+                updatePrices();
+            });
+
+            document.getElementById('outside').addEventListener('change', () => {
+                shipping = shipping_outside_dhaka;
+                shippingPriceContainer.innerHTML = shipping_outside_dhaka;
+                updatePrices();
             });
 
             function updatePrices() {
