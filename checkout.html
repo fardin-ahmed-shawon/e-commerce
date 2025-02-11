@@ -357,7 +357,7 @@
                             <p>Pay With Cash Upon Delivery</p>
                             <br>
                             <div class="radio-input-box">
-                                <input type="radio" id="cod" name="payment_method" value="Cash On Delivery">
+                                <input type="radio" id="cod" name="payment_method" value="Cash On Delivery" checked>
                                 <label for="cod">Cash On Delivery</label><br>
                             </div>
                         </div>
@@ -692,7 +692,7 @@
 
 
 // Cart item show from the Local Storage
-document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
             const orderItemsContainer = document.getElementById('order-items');
             const subtotalPriceContainer = document.getElementById('subtotal-price');
@@ -805,6 +805,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 subtotalPriceContainer.textContent = `Tk. ${newSubtotal}`;
                 totalPriceContainer.textContent = `Tk. ${newSubtotal + shipping}`;
             }
+
+            // Payment Option Selection
+            const paymentMethods = document.querySelectorAll('input[name="payment_method"]');
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', () => {
+                    // Clear required attribute from all input fields
+                    document.querySelectorAll('.input-box input').forEach(input => {
+                        input.removeAttribute('required');
+                    });
+
+                    // Set required attribute for the selected payment method's input fields
+                    if (method.checked) {
+                        const methodId = method.id;
+                        document.querySelectorAll(`#${methodId}_num, #${methodId}_id`).forEach(input => {
+                            input.setAttribute('required', 'required');
+                        });
+                    }
+                });
+            });
+
         });
         
 

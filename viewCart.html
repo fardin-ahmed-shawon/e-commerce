@@ -518,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!isNaN(quantity)) {
                         quantity += 1;
                         quantitySpan.textContent = quantity;
-
+                        
                         // Update the quantity in the cartData array
                         const productId = cartBox.getAttribute('id');
                         const cartItem = cartData.find(item => item.id === productId);
