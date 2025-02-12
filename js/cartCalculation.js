@@ -178,3 +178,44 @@ var total_price;
                 updateCart();
             }
         });
+
+        // Cart Calculation For Single Product Page
+        function addProductToCart(button) {
+            // Accessing grand parent which is card class
+            let product = button.parentElement.parentElement.parentElement.parentElement;
+
+            let id = product.getAttribute("product-id");
+            let image = product.getAttribute("product-img");
+            let name = product.getAttribute("product-title");
+            let price = product.getAttribute("product-price");
+            let quantity = product.getAttribute("product-quantity");
+
+            let ind = 0;
+
+            // Checking same product exist or not in the carts
+            if (carts.length == 0) {
+                carts.push({id, image, name, price, quantity});
+                updateCart();
+            } else {
+                carts.forEach(data=> {
+                    if (data.id == id) {
+                        ind = 1;
+                    }
+                });
+
+                if (ind == 0) {
+                    carts.push({id, image, name, price, quantity});
+                    updateCart();
+                } else {
+                    alert("Product Already Added!");
+                }
+            }
+            console.log("here");
+        }
+
+        // clear all cart data
+        function clearCart() {
+            window.onload = function() {
+                localStorage.clear();
+            };
+        }

@@ -419,40 +419,69 @@
 <script src="js/cartCalculation.js"></script>
 
 <script>
-// Sticky Navbar
-$(document).ready(function () {
-    $(".js-waypoint-sticky").waypoint(function (t) {
-        "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+    // Sticky Navbar
+    $(document).ready(function () {
+        $(".js-waypoint-sticky").waypoint(function (t) {
+            "down" == t ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+        });
     });
-});
+    
+    // Increment and Decrement product quantity
+    function plus() {
+        const numElement = document.querySelector(".num");
+        let count = parseInt(numElement.textContent);
+        numElement.textContent = count + 1;
+        updateProductQuantity(count + 1);
 
-
-// Increment and Decrement product quantity
-function plus() {
-    const numElement = document.querySelector(".num");
-    let count = parseInt(numElement.textContent);
-    numElement.textContent = count + 1;
-}
-
-function minus() {
-    const numElement = document.querySelector(".num");
-    let count = parseInt(numElement.textContent);
-    if (count > 1) {
-        numElement.textContent = count - 1;
+        // Update product-quantity attribute
+        const productContainer = document.querySelector(".product-container");
+        productContainer.setAttribute("product-quantity", count + 1);
     }
-}
 
-function displayProductDetails() {
-    console.log("displayed");
-    const productId = localStorage.getItem('selectedProductId');
-    if (!productId) return;
+    function minus() {
+        const numElement = document.querySelector(".num");
+        let count = parseInt(numElement.textContent);
+        if (count > 1) {
+            numElement.textContent = count - 1;
+            updateProductQuantity(count - 1);
 
-    const product = mens.find(item => item.id === productId) || womens.find(item => item.id === productId);
-    if (!product) return;
-
-    const product_details = document.querySelector(".product-container");
-
-    product_details.innerHTML = `
+            // Update product-quantity attribute
+            const productContainer = document.querySelector(".product-container");
+            productContainer.setAttribute("product-quantity", count - 1);
+        }
+    }
+    
+    function updateProductQuantity(quantity) {
+        const productId = localStorage.getItem('selectedProductId');
+        if (!productId) return;
+    
+        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+        const product = cartData.find(item => item.id === productId);
+        if (product) {
+            product.quantity = quantity;
+            localStorage.setItem('cartData', JSON.stringify(cartData));
+        }
+    }
+    
+    function displayProductDetails() {
+        const productId = localStorage.getItem('selectedProductId');
+        if (!productId) return;
+    
+        const product = mens.find(item => item.id === productId) || womens.find(item => item.id === productId);
+        if (!product) return;
+    
+        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+        const cartProduct = cartData.find(item => item.id === productId);
+        const quantity = cartProduct ? cartProduct.quantity : 1;
+    
+        const product_details = document.querySelector(".product-container");
+        product_details.setAttribute("product-id", `${product.id}`);
+        product_details.setAttribute("product-title", `${product.title}`);
+        product_details.setAttribute("product-img", `${product.images}`);
+        product_details.setAttribute("product-price", `${product.price}`);
+        product_details.setAttribute("product-quantity", `${quantity}`);
+    
+        product_details.innerHTML = `
             <div class="product-images">
                 <div class="img-thumb">
                     <img id="main-image" src="${product.images}" alt="Product Image">
@@ -474,25 +503,23 @@ function displayProductDetails() {
                     <div class="btn-and-counter">
                         <div class="counter">
                             <button onclick="minus()" class="minus">-</button>
-                            <span class="num">1</span>
+                            <span class="num">${quantity}</span>
                             <button onclick="plus()" class="plus">+</button>
                         </div>
-
-                        <button onclick="addToCart()" class="btn btn-danger add-cart">
+                        <button onclick="addProductToCart(this)" class="btn btn-danger add-cart">
                             <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
                         </button>
-                        
                     </div>
-                    <button onclick="buyNow()" class="btn btn-dark buy-now">
+                    <button onclick="window.location.href='viewCart.html';" class="btn btn-dark buy-now">
                         <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
                     </button>
                 </div>
             </div>
-    `;
-
-}
-
-</script>
+        `;
+    }
+    
+    window.onload = displayProductDetails;
+    </script>
 
 </body>
 </html>
