@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
-<body>
+<body onload="displayProductDetails()">
 
 <!--==================================-->
 <!--========== START NAVBAR ==========-->
@@ -252,7 +252,7 @@
 <section class="product py-5">
     <div class="container">
         <div class="product-container">
-            <div class="product-images">
+            <!-- <div class="product-images">
                 <div class="img-thumb">
                     <img id="main-image" src="img/image1.jpg" alt="Product Image">
                     <div class="img-small">
@@ -286,7 +286,7 @@
                         <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
                     </button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <br><br><hr><br>
@@ -428,19 +428,70 @@ $(document).ready(function () {
 
 
 // Increment and Decrement product quantity
-const num = document.querySelector(".num");
-var q = 0;
-
-const plus = ()=> {
-    q++;
-    num.innerText = q;
+function plus() {
+    const numElement = document.querySelector(".num");
+    let count = parseInt(numElement.textContent);
+    numElement.textContent = count + 1;
 }
-const minus = ()=> {
-    if (q > 0) {
-        q--;
-        num.innerText = q;
+
+function minus() {
+    const numElement = document.querySelector(".num");
+    let count = parseInt(numElement.textContent);
+    if (count > 1) {
+        numElement.textContent = count - 1;
     }
 }
+
+function displayProductDetails() {
+    console.log("displayed");
+    const productId = localStorage.getItem('selectedProductId');
+    if (!productId) return;
+
+    const product = mens.find(item => item.id === productId) || womens.find(item => item.id === productId);
+    if (!product) return;
+
+    const product_details = document.querySelector(".product-container");
+
+    product_details.innerHTML = `
+            <div class="product-images">
+                <div class="img-thumb">
+                    <img id="main-image" src="${product.images}" alt="Product Image">
+                    <div class="img-small">
+                        <img src="${product.images}" alt="Thumbnail 1" onclick="changeImage('${product.images}')">
+                        <img src="${product.images}" alt="Thumbnail 2" onclick="changeImage('${product.images}')">
+                        <img src="${product.images}" alt="Thumbnail 3" onclick="changeImage('${product.images}')">
+                        <img src="${product.images}" alt="Thumbnail 4" onclick="changeImage('${product.images}')">
+                    </div>
+                </div>
+            </div>
+            <div class="product-details">
+                <div>
+                    <h2 class="js-waypoint-sticky">${product.title}</h2>
+                    <br>
+                    <p class="description">${product.description}</p>
+                    <h3 class="price">Tk. ${product.price}</h3>
+                    <br>
+                    <div class="btn-and-counter">
+                        <div class="counter">
+                            <button onclick="minus()" class="minus">-</button>
+                            <span class="num">1</span>
+                            <button onclick="plus()" class="plus">+</button>
+                        </div>
+
+                        <button onclick="addToCart()" class="btn btn-danger add-cart">
+                            <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
+                        </button>
+                        
+                    </div>
+                    <button onclick="buyNow()" class="btn btn-dark buy-now">
+                        <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
+                    </button>
+                </div>
+            </div>
+    `;
+
+}
+
 </script>
 
 </body>

@@ -66,7 +66,7 @@ mens.map(item => {
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
                 <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+                <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
         // Insert card into the product container
@@ -94,7 +94,7 @@ womens.map(item => {
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
                 <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+                <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
         // Insert card into the product container
@@ -131,7 +131,7 @@ mens.map(item => {
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
                 <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+                <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
         // Insert card into the product container
@@ -159,7 +159,7 @@ womens.map(item => {
                 <p>${item.sub_category}</p>
                 <h6>Tk. ${item.price}</h6>
                 <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-                <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+                <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
             </div>`;
             
         // Insert card into the product container
@@ -195,7 +195,7 @@ mens.map(item => {
             <p>${item.sub_category}</p>
             <h6>Tk. ${item.price}</h6>
             <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-            <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
         </div>`;
         
     // Insert card into the product container
@@ -228,12 +228,17 @@ womens.map(item => {
             <p>${item.sub_category}</p>
             <h6>Tk. ${item.price}</h6>
             <button onclick="addToCart(this)" class="btn btn-outline-dark"><span>Add to Cart</span> <i class="ri-shopping-bag-line"></i></button>
-            <button onclick="window.location.href='product.html';" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
+            <button onclick="openProduct('${item.id}')" class="btn btn-dark"><span>Order Now</span> <i class="ri-shopping-cart-2-line"></i></button>
         </div>`;
         
     // Insert card into the product container
     womens_fashion_products.appendChild(card); 
 })
+
+function openProduct(id) {
+    localStorage.setItem('selectedProductId', id);
+    window.location.href = 'product.html';
+}
 
 
 // Product Page
