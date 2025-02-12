@@ -210,10 +210,9 @@ var total_price;
                     alert("Product Already Added!");
                 }
             }
-            console.log("here");
         }
 
-        // clear all cart data
+        // function To clear all cart data
         function clearCart() {
             window.onload = function() {
                 localStorage.clear();

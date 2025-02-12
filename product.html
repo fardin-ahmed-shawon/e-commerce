@@ -500,24 +500,47 @@
                     <p class="description">${product.description}</p>
                     <h3 class="price">Tk. ${product.price}</h3>
                     <br>
-                    <div class="btn-and-counter">
-                        <div class="counter">
-                            <button onclick="minus()" class="minus">-</button>
-                            <span class="num">${quantity}</span>
-                            <button onclick="plus()" class="plus">+</button>
+                        <h6>Select Size:</h6>
+                        <div class="product-size-container">
+                            <div class="pt-2">
+                                <input type="radio" id="s" name="size" value="S">
+                                <label for="s">S</label>
+                            </div>
+                            <div class="pt-2">
+                                <input type="radio" id="m" name="size" value="M">
+                                <label for="m">M</label>
+                            </div>
+                            <div class="pt-2">
+                                <input type="radio" id="l" name="size" value="L">
+                                <label for="l">L</label>
+                            </div>
+                            <div class="pt-2">
+                                <input type="radio" id="xl" name="size" value="XL">
+                                <label for="xl">XL</label>
+                            </div>
+                            <div class="pt-2">
+                                <input type="radio" id="xxl" name="size" value="XXL">
+                                <label for="xxl">XXL</label>
+                            </div>
                         </div>
-                        <button onclick="addProductToCart(this)" class="btn btn-danger add-cart">
-                            <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
+                        <br>
+                        <div class="btn-and-counter">
+                            <div class="counter">
+                                <button onclick="minus()" class="minus">-</button>
+                                <span class="num">${quantity}</span>
+                                <button onclick="plus()" class="plus">+</button>
+                            </div>
+                            <button onclick="addProductToCart(this)" class="btn btn-danger add-cart">
+                                <span>Add to Cart</span> <i class="ri-shopping-bag-line"></i>
+                            </button>
+                        </div>
+                        <button onclick="window.location.href='viewCart.html';" class="btn btn-dark buy-now">
+                            <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
                         </button>
-                    </div>
-                    <button onclick="window.location.href='viewCart.html';" class="btn btn-dark buy-now">
-                        <span>Order Now</span> <i class="ri-shopping-cart-2-line"></i>
-                    </button>
                 </div>
             </div>
         `;
     }
-    
     window.onload = displayProductDetails;
     </script>
 
