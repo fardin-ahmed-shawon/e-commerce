@@ -43,18 +43,17 @@
             </div>
 
             <div class="search-area">
-                <div class="search-row">
-                    <!-- <form action="#"> -->
-                        <i class="ri-search-line"></i>
-                        <input id="input-box" type="search" autofocus required placeholder="Search Your Product Here" autocomplete="off">
-                    <!-- </form> -->
+                <div class="search-row dropdown">
+                    <i class="ri-search-line"></i>
+                    <input id="input-box" type="text" autofocus required placeholder="Search Your Product Here" autocomplete="off">
+                    <ul class="search-suggestions">
+                        <!-- Suggested Product List -->
+                    </ul>
                 </div>
-
                 <div class="mobile-search-area">
                     <i class="ri-search-line search-icon"></i>
                     <i class="ri-close-fill search-close-icon"></i>
                 </div>
-
             </div>
 
             <div class="btn-area">
@@ -423,9 +422,8 @@
                 </div>
             </div>
         </section>
-
+            
     </div>  
-
 </div>
 <!--==========================================-->
 <!--============ END HOME SECTION ==========-->
@@ -553,6 +551,7 @@
 <script src="js/womens.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cartCalculation.js"></script>
+<script src="js/search.js"></script>
 
 <script>
 // Sticky Navbar
