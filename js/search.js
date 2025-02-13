@@ -279,27 +279,40 @@ const products = [
         "images": "img/products/womens/ladiespant/ladiespant3.jpg"
     }
 ]
+
 // Generate keywords array from product titles
 let keywords = products.map(product => product.title);
 
-const resultBox = document.querySelector(".search-suggestions");
-const inputBox = document.getElementById("input-box");
+const resultBoxDesktop = document.querySelector(".search-suggestions");
+const inputBoxDesktop = document.getElementById("input-box");
 
-inputBox.onkeyup = function() {
-    let result = [];
-    let input = inputBox.value;
-    if (input.length) {
-        result = products.filter((product) => {
-            return product.title.toLowerCase().includes(input.toLowerCase());
-        });
+const resultBoxMobile = document.querySelector(".search-suggestions-mobile");
+const inputBoxMobile = document.getElementById("input-box-mobile");
+
+function handleSearch(inputBox, resultBox) {
+    inputBox.onkeyup = function() {
+        let result = [];
+        let input = inputBox.value;
+        if (input.length) {
+            result = products.filter((product) => {
+                return product.title.toLowerCase().includes(input.toLowerCase());
+            });
+        }
+        display(result, resultBox);
     }
-    display(result);
 }
 
-function display(result) {
+function display(result, resultBox) {
     if (result.length) {
         const content = result.map((item) => {
-            return `<li><a class="dropdown-item" href="#" onclick="openProduct('${item.id}', '${item.title}')">${item.title}</a></li>`;
+            return `
+                <div>
+                    <a class="dropdown-item" href="#" onclick="openProduct('${item.id}', '${item.title}')">
+                        <img class="suggestion-left" src="${item.images}" alt="${item.title}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+                        <span class="suggestion-mid">${item.title}</span>
+                        <span class="suggestion-right" style="float: right;">Tk. ${item.price}</span>
+                    </a>
+                </div>`;
         }).join('');
         resultBox.innerHTML = content;
         resultBox.style.display = 'block';
@@ -315,3 +328,7 @@ function openProduct(id, title) {
     localStorage.setItem('selectedProductTitle', title);
     window.location.href = 'product.html';
 }
+
+// Initialize search handlers for both desktop and mobile
+handleSearch(inputBoxDesktop, resultBoxDesktop);
+handleSearch(inputBoxMobile, resultBoxMobile);

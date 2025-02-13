@@ -43,18 +43,17 @@
             </div>
 
             <div class="search-area">
-                <div class="search-row">
-                    <!-- <form action="#"> -->
-                        <i class="ri-search-line"></i>
-                        <input id="input-box" type="search" autofocus required placeholder="Search Your Product Here" autocomplete="off">
-                    <!-- </form> -->
+                <div class="search-row dropdown">
+                    <i class="ri-search-line"></i>
+                    <input id="input-box" type="text" autofocus required placeholder="Search Your Product Here" autocomplete="off">
+                    <div class="search-suggestions">
+                        <!-- Suggested Product List -->
+                    </div>
                 </div>
-
                 <div class="mobile-search-area">
                     <i class="ri-search-line search-icon"></i>
                     <i class="ri-close-fill search-close-icon"></i>
                 </div>
-
             </div>
 
             <div class="btn-area">
@@ -200,9 +199,10 @@
         </div>
         <!-- Search Bar For Mobile -->
         <div class="mobile-search-box">
-                <!-- <form action="#"> -->
-                    <input type="search" autofocus required placeholder="Search Your Product Here" autocomplete="off">
-                <!-- </form> -->
+            <input id="input-box-mobile" type="text" autofocus required placeholder="Search Your Product Here" autocomplete="off">
+            <div class="search-suggestions-mobile">
+                <!-- Suggested Product List -->
+            </div>
         </div>
     </div>
 </nav>
@@ -405,6 +405,7 @@
 <!-- Main JS -->
 <script src="js/main.js"></script>
 <script src="js/cartCalculation.js"></script>
+<script src="js/search.js"></script>
 
 
 <script>

@@ -45,9 +45,9 @@
                 <div class="search-row dropdown">
                     <i class="ri-search-line"></i>
                     <input id="input-box" type="text" autofocus required placeholder="Search Your Product Here" autocomplete="off">
-                    <ul class="search-suggestions">
+                    <div class="search-suggestions">
                         <!-- Suggested Product List -->
-                    </ul>
+                    </div>
                 </div>
                 <div class="mobile-search-area">
                     <i class="ri-search-line search-icon"></i>
@@ -198,9 +198,10 @@
         </div>
         <!-- Search Bar For Mobile -->
         <div class="mobile-search-box">
-                <!-- <form action="#"> -->
-                    <input type="search" autofocus required placeholder="Search Your Product Here" autocomplete="off">
-                <!-- </form> -->
+            <input id="input-box-mobile" type="text" autofocus required placeholder="Search Your Product Here" autocomplete="off">
+            <div class="search-suggestions-mobile">
+                <!-- Suggested Product List -->
+            </div>
         </div>
     </div>
 </nav>
@@ -391,6 +392,7 @@
 <script src="js/womens.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cartCalculation.js"></script>
+<script src="js/search.js"></script>
 <script src="js/search.js"></script>
 
 <script>
